@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page about Musicians</title>
+    </head>
+<body>
+<h1>Musician guess by PYDI VENKATA SATYA RAMESH ADAPA</h1>
+<h2>Getting input</h2>
+<form>
+    <label for="form1_password">Enter the secret musician name </label>
+    <input type ="password" id="form1_password" name="form1_password" value="John Lennon"> <br>
+
+    <label for="form1_name">Guess the Musician</label>
+    <input type ="text" id="form1_name" name="form1_name" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+<p id="result">Result will appear here after clicking the above button </p>
+<script> 
+var correct=0;
+var wrong=0;
+function checkGuess(){
+    mname=document.getElementById("form1_password").value
+    mpassword=document.getElementById("form1_name").value
+    out=document.getElementById("result")
+    if(mname==mpassword){    
+        correct+=1
+        alertright=alert("You got it right")
+    }
+    else{ 
+        wrong+=1
+        alertwrng=alert("Wrong Musician")
+    }
+    out.innerHTML="Right count "+correct+"Wrong count "+wrong
+}
+</script>
+</body>
+</html> 
