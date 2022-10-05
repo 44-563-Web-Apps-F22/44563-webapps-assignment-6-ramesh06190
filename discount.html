@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount page</title>
+</head>
+ 
+<body>
+
+<h2>PYDI VENKATA SATYA RAMESH ADAPA Computes Discounts</h2>
+
+<form>
+    <label for="form1_bsamt">Enter base amount</label>
+    <input type ="number" id="form1_bsamt" name="form1_bsamt" value=20> <br>
+
+    <label for="form1_dsc">Enter the discount percentage</label>
+    <input type ="number" id="form1_dsc" name="form1_dsc" value=10 autofocus> <br>
+
+    <input type="button" onclick="discount()" value="Apply Discount">
+</form>
+
+<p id="result">Discount will appear here</p>
+
+<script> 
+
+function discount(){
+   
+    amount = document.getElementById("form1_bsamt").value
+    disc= document.getElementById("form1_dsc").value
+    result="Discounted amounts for base "+amount+" are "
+    for(let i=1;i<6;i++){
+        mx=i*amount
+        total=mx*(1-(disc/100))
+        result+= total+" "
+
+    }
+    replacetxt=document.getElementById("result");
+    replacetxt.innerHTML=result;
+}
+</script>
+
+</body>
+</html> 
