@@ -13,7 +13,7 @@
     <input type ="number" id="form1_bsamt" name="form1_bsamt" value=20> <br>
 
     <label for="form1_dsc">Enter the discount percentage</label>
-    <input type ="number" id="form1_dsc" name="form1_dsc" value=10 autofocus> <br>
+    <input type ="number" id="form1_dsc" name="form1_dsc" value=10 > <br>
 
     <input type="button" onclick="discount()" value="Apply Discount">
 </form>
@@ -37,6 +37,37 @@ function discount(){
     replacetxt.innerHTML=result;
 }
 </script>
+<form>
+    <input type="radio" id="rg1_multiply" value="times" onclick="chooseOp()">
+    <label for="rg1_multiply">*</label></br>
+  
+    <input type="radio" id="rg1_divide" value="divide" onclick="chooseOp()">
+    <label for="rg1_divide">/</label></br>
+  
+    <input type="radio" id="rg1_exp" value="exponent" onclick="chooseOp()">
+    <label for="rg1_exp">**</label></br>
 
+</form>
+<p id="reultofoperation"> </p>
+<script>
+    function chooseOp(){
+        amount = document.getElementById("form1_bsamt").value
+        disc= document.getElementById("form1_dsc").value
+        result=document.getElementById("reultofoperation")
+        if(document.getElementById("rg1_multiply").checked==true){
+            multiplication=amount*disc
+            result.innerHTML="The value will be amount*discount that is "+multiplication
+        }
+        else if(document.getElementById("rg1_divide").checked==true){
+            division=amount/disc
+            result.innerHTML="The value will be amount/discount that is "+division
+        }
+        else if(document.getElementById("rg1_exp").checked==true){
+            exp=amount**disc
+            result.innerHTML="The value will be amount**discount that is "+exp
+        }
+
+    }
+</script>
 </body>
 </html> 
