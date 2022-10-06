@@ -31,7 +31,13 @@ function checkGuess(){
         wrong+=1
         alertwrng=alert("Wrong Musician")
     }
+    if(wrong>=3){
+        gameOver();
+    }
     out.innerHTML="Right count "+correct+"Wrong count "+wrong
+}
+function gameOver(){
+    alert("Sorry, game over")
 }
 </script>
 <div class="container">
